@@ -226,11 +226,11 @@ public class ForecastFragment extends Fragment {
             //code for talking to the cloud
 
             // These two need to be declared outside the try/catch
-// so that they can be closed in the finally block.
+            // so that they can be closed in the finally block.
             HttpURLConnection urlConnection = null;
             BufferedReader reader = null;
 
-// Will contain the raw JSON response as a string.
+            // Will contain the raw JSON response as a string.
             String forecastJsonStr = null;
 
             String format = "json";
