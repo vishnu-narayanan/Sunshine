@@ -1,9 +1,11 @@
 package com.vn.sunshine;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class DetailActivity extends ActionBarActivity {
@@ -12,6 +14,12 @@ public class DetailActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        Intent i = getIntent();
+        String weather = i.getStringExtra("weather");
+
+        ((TextView) findViewById(R.id.detail)).setText(weather);
+
     }
 
 
