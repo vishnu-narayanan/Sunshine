@@ -9,4 +9,14 @@
     <string name="pref_location_label">Location</string>
     <string name="pref_location_key" translatable="false">location</string>
     <string name="pref_location_default" translatable="false">thodupuzha</string>
+
+    <string name="pref_unit_label">Temperature Units</string>
+    <string name="pref_unit_key" translatable="false">unit</string>
+    <string name="pref_unit_label_metric">Metric</string>
+    <string name="pref_unit_label_imperial">Imperial</string>
+    <string name="pref_unit_default">metric</string>
+    <string name="pref_unit_metric" translatable="false">metric</string>
+    <string name="pref_unit_imperial" translatable="false">imperial</string>
+
+
 </resources>
