@@ -17,6 +17,8 @@
     <string name="pref_unit_default">metric</string>
     <string name="pref_unit_metric" translatable="false">metric</string>
     <string name="pref_unit_imperial" translatable="false">imperial</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="map_settings">Map</string>
 
 
 </resources>
