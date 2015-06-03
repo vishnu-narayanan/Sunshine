@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class DetailActivity extends ActionBarActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +21,7 @@ public class DetailActivity extends ActionBarActivity {
 
         ((TextView) findViewById(R.id.detail)).setText(weather);
 
-    }
+        }
 
 
     @Override
@@ -29,6 +30,8 @@ public class DetailActivity extends ActionBarActivity {
         getMenuInflater().inflate(R.menu.menu_detail, menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -46,4 +49,6 @@ public class DetailActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
