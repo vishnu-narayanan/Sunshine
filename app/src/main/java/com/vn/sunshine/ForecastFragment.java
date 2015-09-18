@@ -259,7 +259,7 @@ public class ForecastFragment extends Fragment {
 
             String format = "json";
             String units = "metric";
-            int numDays = 7;
+            int numDays = 14;
 
 
             try {
