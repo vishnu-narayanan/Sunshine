@@ -86,6 +86,7 @@ public class DetailActivity extends ActionBarActivity {
     public void loadMaps(View view) {
         Intent intent = new Intent(this,MapsActivity.class);
         intent.putExtra("weather", weather);
+
         startActivity(intent);
     }
 }

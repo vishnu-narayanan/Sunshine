@@ -172,8 +172,34 @@ public class ForecastFragment extends Fragment {
             final String OWM_MIN = "min";
             final String OWM_DESCRIPTION = "main";
 
+            //code to parse location data from json for MapView
+            final String OWM_CITY = "city";
+            final String OWM_COORDINATES = "coord";
+            final String OWM_LONG = "lon";
+            final String OWM_LAT = "lat";
+
+
             JSONObject forecastJson = new JSONObject(forecastJsonStr);
+            Log.v(LOG_TAG,"forecastJson " + forecastJson);
             JSONArray weatherArray = forecastJson.getJSONArray(OWM_LIST);
+
+            //code to parse location data from JSON for MapView
+
+            JSONObject cityObject = forecastJson.getJSONObject(OWM_CITY);
+            JSONObject coordinateObject = cityObject.getJSONObject(OWM_COORDINATES);
+
+            double lon = coordinateObject.getDouble(OWM_LONG);
+            double lat = coordinateObject.getDouble(OWM_LAT);
+
+            Log.v(LOG_TAG,"CityObject" + cityObject);
+            Log.v(LOG_TAG, "Longitude" + lon);
+            Log.v(LOG_TAG, "Latitude" + lat);
+
+            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putLong("Latitude", Double.doubleToLongBits(lat));
+            editor.putLong("Longitude", Double.doubleToLongBits(lon));
+            editor.commit();
 
             // OWM returns daily forecasts based upon the local time of the city that is being
             // asked for, which means that we need to know the GMT offset to translate this data
