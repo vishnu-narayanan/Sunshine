@@ -21,7 +21,8 @@
     <string name="map_settings">Map</string>
     <string name="action_share">Share</string>
     <string name="title_activity_maps">Map</string>
-
+    <string name="action_lab">Lab</string>
+    <string name="title_activity_lab">LabActivity</string>
 
 
 </resources>
