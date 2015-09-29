@@ -66,6 +66,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.vn.sunshine.MainActivity" />
         </activity>
+        <activity
+            android:name=".MapsActivity2"
+            android:label="@string/title_activity_maps2" >
+        </activity>
     </application>
 
 </manifest>

@@ -4,6 +4,7 @@ package com.vn.sunshine;
  * Created by vn on 26/2/15.
  */
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -42,6 +43,7 @@ import java.util.ArrayList;
 public class ForecastFragment extends Fragment {
 
     private ArrayAdapter<String> mForecastAdapter;
+    private ProgressDialog pDialog;
 
     public ForecastFragment() {
     }
@@ -124,6 +126,18 @@ public class ForecastFragment extends Fragment {
         /* The date/time conversion code is going to be moved outside the asynctask later,
          * so for convenience we're breaking it out into its own method now.
          */
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            // Showing progress dialog
+            pDialog = new ProgressDialog(getActivity());
+            pDialog.setMessage("Please wait...");
+            pDialog.setCancelable(false);
+            pDialog.show();
+
+        }
+
+
         private String getReadableDateString(long time) {
             // Because the API returns a unix timestamp (measured in seconds),
             // it must be converted to milliseconds in order to be converted to valid date.
@@ -374,6 +388,9 @@ public class ForecastFragment extends Fragment {
 
         @Override
         protected void onPostExecute(String[] result) {
+            if (pDialog.isShowing())
+                pDialog.dismiss();
+
             if (result != null) {
                 mForecastAdapter.clear();
                 for (String dayForecastStr : result) {

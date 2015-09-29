@@ -23,6 +23,8 @@
     <string name="title_activity_maps">Map</string>
     <string name="action_lab">Lab</string>
     <string name="title_activity_lab">LabActivity</string>
+    <string name="title_activity_maps2">Map</string>
+    <string name="lab_activty_help">get weather for multiple locations</string>
 
 
 </resources>
