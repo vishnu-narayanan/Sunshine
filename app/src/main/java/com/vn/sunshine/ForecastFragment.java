@@ -300,6 +300,7 @@ public class ForecastFragment extends Fragment {
             String format = "json";
             String units = "metric";
             int numDays = 14;
+            String api_key = getString(R.string.api_key);
 
 
             try {
@@ -312,19 +313,21 @@ public class ForecastFragment extends Fragment {
                 final String FORMAT_PARAM = "mode";
                 final String UNITS_PARAM = "units";
                 final String DAYS_PARAM = "cnt";
+                final String API_KEY = "appid";
 
                 Uri builtUri = Uri.parse(FORECAST_BASE_URL).buildUpon()
                         .appendQueryParameter(QUERY_PARAM, params[0])
                         .appendQueryParameter(FORMAT_PARAM, format)
                         .appendQueryParameter(UNITS_PARAM, units)
                         .appendQueryParameter(DAYS_PARAM, Integer.toString(numDays))
+                        .appendQueryParameter(API_KEY,api_key)
                         .build();
 
 
                 URL url = new URL(builtUri.toString());
-                Log.v(LOG_TAG, "Built URI" + builtUri.toString());
+                Log.v(LOG_TAG, "Built URI " + builtUri.toString());
 
-
+                //http://api.openweathermap.org/data/2.5/forecast/daily?q=thodupuzha&mode=json&units=metric&cnt=14&appid
                 //URL url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7");
 
                 // Create the request to OpenWeatherMap, and open the connection
